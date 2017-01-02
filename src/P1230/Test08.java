@@ -23,6 +23,7 @@ public class Test08 {
 		}
 	}
 	
+	
 	//한사람만 꺼내는 함수를 만들어 보자
 	public void getOnePerson(String group, String name){
 		// 어떤 그룹에 누구를 꺼내달라고 하면...
