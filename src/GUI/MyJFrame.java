@@ -3,6 +3,9 @@
  */
 package GUI;
 
+import java.awt.Color;
+import java.awt.Container;
+
 import javax.swing.JFrame;
 
 /**
@@ -13,6 +16,11 @@ public class MyJFrame extends JFrame{
 	
 	public  MyJFrame(){
 		this("");
+	}
+	
+	@Override
+	public Container getContentPane() {
+		return super.getContentPane();
 	}
 
 	public MyJFrame(String title) {

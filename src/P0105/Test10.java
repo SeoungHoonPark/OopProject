@@ -42,7 +42,6 @@ public class Test10 extends MyJFrame{
 	}
 	
 	class CheckBoxEvent10 implements ItemListener{
-
 		@Override
 		public void itemStateChanged(ItemEvent arg0) {
 			//각각의 체크상자가 선택된 상태인지 아닌지를 알아낸다.
