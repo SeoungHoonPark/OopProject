@@ -232,9 +232,18 @@ public class FriendInfo {
 	}
 	//	삭제 전담 함수
 	void deleteProc() {
-		//	할일
-		//		삭제할 친구의 번호를 알아낸다.
-		//		삭제 전담 Statement에게 일시킨다.
+			//		할일
+			//		삭제할 친구의 번호를 알아낸다.
+			int no = Integer.parseInt(noF.getText());
+			//		삭제 전담 Statement에게 일시킨다.
+			try{
+				deleteS.setInt(1, no);
+				deleteS.execute();
+					
+			}catch(Exception e){
+			}
+			removeField();
+			removeTable();
 	}
 	//	이름 검색 전담 함수
 	void nameProc() {
@@ -270,10 +279,36 @@ public class FriendInfo {
 	}
 	
 	void telProc() {
+		ResultSet rs = null;
+		removeTable();
 		//	할일
-		//		검색할 전화번호를 알아낸다.
-		//		%기호를 강제로 붙인다.
-		//		실행하고 테이블에 출력한다.
+		try{
+			//		검색할 전화번호를 알아낸다.
+			String tel = telF.getText();
+			//		%기호를 강제로 붙인다.
+			telS.setString(1, "%" + tel);
+			//		실행하고 테이블에 출력한다.
+			rs = telS.executeQuery();
+			
+			// 리젤트셋에 담아서 table에 출력한다.
+			while(rs.next()){
+				Object[] o = new Object[6];
+				o[0] = rs.getInt("f_no");
+				o[1] = rs.getString("f_name");
+				o[3] = rs.getString("f_tel");
+				o[4] = rs.getString("f_addr");
+				o[5] = rs.getString("f_birth");
+				o[6] = rs.getString("f_gender");
+				
+				model.addRow(o);
+				
+			}
+		}catch(Exception e){
+		}finally {
+			db.close(rs);
+		}
+		removeField();
+		removeTable();
 	}
 	
 	//	단추 이벤트 처리
