@@ -196,7 +196,6 @@ public class FriendInfo {
 			addS.setString(3,addr);
 			addS.setString(4,birth);
 			addS.setString(5,gender);
-			
 			addS.execute();
 		}
 		catch(Exception e) {
@@ -222,12 +221,10 @@ public class FriendInfo {
 				o[3] = rs.getString("f_addr");
 				o[4] = rs.getString("f_birth");
 				o[5] = rs.getString("f_gender");
-				
 				model.addRow(o);
 			}
 		}
 		catch(Exception e) {
-			
 		}
 	}
 	//	삭제 전담 함수
@@ -273,7 +270,6 @@ public class FriendInfo {
 			}
 		}
 		catch(Exception e) {
-			
 		}
 		removeField();
 	}
@@ -299,9 +295,7 @@ public class FriendInfo {
 				o[4] = rs.getString("f_addr");
 				o[5] = rs.getString("f_birth");
 				o[6] = rs.getString("f_gender");
-				
 				model.addRow(o);
-				
 			}
 		}catch(Exception e){
 		}finally {
