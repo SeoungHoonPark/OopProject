@@ -55,7 +55,7 @@ public class ChatClient01 {
 		//	이제 화면이 준비되었으므로....통신 준비를 하자
 		try {
 			//	서버에 연결을 시도하자.
-			socket = new Socket("192.168.35.92", 7788);
+			socket = new Socket("192.168.35.72", 7788);
 			//	통신할 스트림을 준비한다.
 			InputStream		in = socket.getInputStream();
 			OutputStream	out = socket.getOutputStream();
